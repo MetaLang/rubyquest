@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  short_desc: MyText
+  long_desc: MyText
+  connection_id: 1
+  inventory_id: 1
+  room_id: 1
+  takeable: false
+  useable: false
+  openable: false
+
+two:
+  name: MyString
+  short_desc: MyText
+  long_desc: MyText
+  connection_id: 1
+  inventory_id: 1
+  room_id: 1
+  takeable: false
+  useable: false
+  openable: false

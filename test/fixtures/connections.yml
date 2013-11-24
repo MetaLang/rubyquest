@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  direction: MyString
+  room_id: 1
+  traversable: false
+
+two:
+  direction: MyString
+  room_id: 1
+  traversable: false

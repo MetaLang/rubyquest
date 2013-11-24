@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyText
+  password: MyText
+  email: MyText
+  session_id: 1
+  inventory_id: 1
+  room_id: 1
+
+two:
+  username: MyText
+  password: MyText
+  email: MyText
+  session_id: 1
+  inventory_id: 1
+  room_id: 1
