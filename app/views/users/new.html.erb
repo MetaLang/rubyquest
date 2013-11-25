@@ -1,0 +1,23 @@
+<div style="margin: auto; text-align: center;">
+	<h1 style="color: white;">New User</h1>
+	<%= form_for :user do |u| %>
+	  <p>
+		<%= u.label :username %><br>
+		<%= u.text_field :username %>
+	  </p>
+	 
+	  <p>
+		<%= u.label :password %><br>
+		<%= u.text_field :password %>
+	  </p>
+	 
+	  <p>
+		<%= u.label :email %><br>
+		<%= u.text_field :email %>
+	  </p>
+	  
+	  <p>
+		<%= u.submit %>
+	  </p>
+	<% end %>
+</div>
