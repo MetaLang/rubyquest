@@ -1,7 +1,7 @@
 RubyQuest::Application.routes.draw do
   get "home/login"
 	get "users", to: "users#new"
-	
+	get "home/login", to: "home#login", as: "home"   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
