@@ -1,7 +1,13 @@
 RubyQuest::Application.routes.draw do
-
+	root :to => 'home#main'
+	get "home/main"
+  get "users", to: "users#new"
+  get "login", to: "users#login"
+	get "sessions/new", to: "sessions#new"
+  get "home/main", to: "home#main", as: "home"
+	match "sessions/new", to: "sessions#new"
   resources :users
-  
+  resources :sessions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,6 @@ RubyQuest::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
