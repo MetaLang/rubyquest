@@ -1,9 +1,7 @@
 RubyQuest::Application.routes.draw do
-  get "home/main"
-  get "users", to: "users#new"
-  get "login", to: "users#login"
-  get "home/main", to: "home#main", as: "home"
 
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -14,9 +12,6 @@ RubyQuest::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  resources :users
 
   # Sample resource route with options:
   #   resources :products do
@@ -53,7 +48,7 @@ RubyQuest::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#main'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
