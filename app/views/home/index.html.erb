@@ -5,6 +5,7 @@
 <div class="separator"></div>
 <div id="options">
 	<span style="color: red;"><%= flash[:alert] %></span><br/>
+    <%= link_to "Login", new_session_path, :class => "option" %>
 	<br />
     <%= link_to "Register", new_user_path, :class => "option" %>
 	<br />
