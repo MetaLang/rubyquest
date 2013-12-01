@@ -5,8 +5,11 @@
 <div class="separator"></div>
 <div id="options">
 	<span style="color: red;"><%= flash[:alert] %></span><br/>
-	<a class="option" href="#">Login</a><br/>
+	<!--<a class="option" href="#">Login</a><br/>-->
+	<%= link_to "Login", { :controller => "users", :action => "login" }, { :class => "option" } %>
+	<br />
 	<%= link_to "Register", { :controller => "users" }, { :class => "option" } %>
+	<br />
 </div>
 <img id="steve-brule-img" src="\assets\brule.jpg"/>
 
