@@ -1,7 +1,7 @@
 <div>
-    <%= @itemsInRoom.each do |i| %>
+    <% @itemsInRoom.each do |item| %>
         <p>
-        <%#= i.read_attribute(:name) %>
+            <%= item.name %>: <%= item.long_desc %>
         </p>
     <% end %>
 </div>
