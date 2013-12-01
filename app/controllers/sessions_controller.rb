@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+	include SessionsHelper
+	
 	def create
 		user = User.where(username: params[:session][:username]).first
 		#if user && user.authenticate(params[:session][:password])
