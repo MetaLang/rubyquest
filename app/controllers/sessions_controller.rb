@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-	def new
-	end
-	
 	def create
 		user = User.where(username: params[:session][:username]).first
 		#if user && user.authenticate(params[:session][:password])
@@ -12,10 +9,6 @@ class SessionsController < ApplicationController
 		else
 			# Create an error message and re-render the signin form.
 			flash.now[:error] = 'Invalid email/password combination'
-			render 'new'
 		end
-	end
-	
-	def destroy
 	end
 end
