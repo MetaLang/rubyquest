@@ -1,5 +1,7 @@
 RubyQuest::Application.routes.draw do
 
+  get "static_pages/intro"
+
   resources :users
   resources :rooms
   resources :sessions
