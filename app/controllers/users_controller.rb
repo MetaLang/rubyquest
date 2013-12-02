@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 	def create
-		@user = User.new(params[:user])
-		@user.save
+		@user = User.create(params[:user])
 		flash[:alert] = "You are not yet assigned to an experiment."
+<<<<<<< HEAD
 		
 		if @user.save
 			redirect_to home_url, alert: "User created!"
@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 		if @user.errors.any?
 			render 'new'
 		end
+=======
+		redirect_to root_url, alert: "User created!"
+>>>>>>> 5c9a398f73dc47f09b2888401b3a5a0d2da7513a
 	end
 	
 	private
