@@ -12,5 +12,5 @@
 		and communication devices at the safe house. Will you find the Golden Fedora in time?
 	</p>
 	<br/>
-	<%= link_to "Start!", '/rooms/' + session[:room_id].to_s %>
+	<%= link_to "Start!", room_path(id: session[:room_id]) %>
 </div>

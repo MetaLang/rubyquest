@@ -9,8 +9,6 @@ class UsersController < ApplicationController
 		if @user.errors.any?
 			render 'new'
 		end
-
-
 	end
 	
 	private
