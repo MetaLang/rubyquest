@@ -1,8 +1,7 @@
-<% room = Room.where(id: session[room_id]).first %>
-<p> <%= room.enter_desc %> </p>
+<p> <%= @room.enter_desc %> </p>
 <p>You see the following items:</p>
-<% @items.each do |item| %>
-	<% if item.room_id == room.id %>
-		<p><%= item.name %></p>
-	<% end %>
+<% @itemsInRoom.each do |item| %>
+    <p>
+        <%= item.name %>: <%= item.long_desc %>
+    </p>
 <% end %>
