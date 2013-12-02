@@ -1,9 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-	
+#encoding: utf-8
 Room.create([{
     name: 'Garage', 
     enter_desc: 'All the lights are out and you can’t see a thing. This would be a problem for a special agent who isn’t Dr. Steve Brule, but luckily for you, you are Dr. Steve Brule. You whip out your flashlight, more formally known as the HyperXVision-2000. Looking around you first notice three things: a door with a keypad, a toolbox on a shelf at the back of the room, and a hideous Bricklin SV-1, which is the kind of car that only a province like New Brunswick would think is a good idea.'

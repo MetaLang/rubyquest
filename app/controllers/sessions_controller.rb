@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 			render new_session_path
 		elsif user.password == params[:session][:password]
 			# Sign the user in and redirect to the user's show page.
+			session[:current_user_id] = user.id
 			sign_in user
 			redirect_to intro_path
 		else
