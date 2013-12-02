@@ -1,6 +1,11 @@
 RubyQuest::Application.routes.draw do
 
+  get "items/examine/:id" => "items#examine"
+  get "items/take/:id" => "items#take"
+  get "items/drop/:id" => "items#drop"
+
   get "static_pages/intro", :as => :intro
+
 
   resources :users
   resources :rooms
