@@ -19,7 +19,7 @@ Item.create([{
 Item.create([{
     name: 'Window Breaker', 
     short_desc: 'A functional (?) window breaker', 
-    long_desc: 'You see that is old, yes, but probably still functional. The Dr. can put it to use.', 
+    long_desc: 'You see that it is old, yes, but probably still functional. The Dr. can put it to use.', 
     connection_id: 0, 
     inventory_id: 0, 
     room_id: 1, 
