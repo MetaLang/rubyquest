@@ -1,10 +1,11 @@
 RubyQuest::Application.routes.draw do
 
-  get "static_pages/intro"
+  get "static_pages/intro", :as => :intro
 
   resources :users
   resources :rooms
   resources :sessions
+
   root to: "home#index"
 
   # The priority is based upon order of creation:
