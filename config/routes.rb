@@ -1,8 +1,8 @@
 RubyQuest::Application.routes.draw do
 
-  get "items/examine/:id" => "items#examine"
-  get "items/take/:id" => "items#take"
-  get "items/drop/:id" => "items#drop"
+  get "items/examine/:name" => "items#examine"
+  get "items/take/:name" => "items#take"
+  get "items/drop/:name" => "items#drop"
 
   get "static_pages/intro", :as => :intro
 
