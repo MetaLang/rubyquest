@@ -13,3 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$('document').ready(function()
+{
+    $('#command-button').on('click', function(ev)
+    {
+        var validCmds = ["take", "examine", "drop", "look"];
+        var cmdText = $('#command-field').val();
+        var words = cmdText.split(" ");
+        if ((words.length == 1 || words.length == 2) && (validCmds.indexOf(words[0]) > -1))
+        {
+            if (words[0] == "look")
+            {
+                location.reload();
+            }
+            else
+            {
+                var arg = words[1];
+                $.get("/items/" + words[0] + "/" + words[1])
+                    .done(function(data)
+                    {
+                        console.log(data);
+                        $('#content-container').append(data);
+                    });
+            }
+        }
+    });
+});

@@ -1,9 +1,18 @@
-<p> <%= @room.enter_desc %> </p>
-<p>You do a quick search of the room and find the following items:</p>
-<% Item.all.each do |item| %>
-	<% if item.room_id == @room.id %>
-		<p>
-			<%= item.name %>: <%= item.long_desc %>
-		</p>
-	<% end %>
-<% end %>
+<div id="content-container">
+    <p id="room-title"><%= @room.name %></p>
+    <p> <%= @room.enter_desc %> </p>
+    <p>You do a quick search of the room and find the following items:</p>
+    <% Item.all.each do |item| %>
+    	<% if item.room_id == @room.id %>
+    		<p>
+    			<%= item.name %>: <%= item.long_desc %>
+    		</p>
+    	<% end %>
+    <% end %>
+    <div class="separator"></div>
+    <form id="user-command">
+        <input type="text" name="command" id="command-field" /><br />
+        <input type="button" value="Perform Action" id="command-button" />
+    </form>
+    <div class="separator"></div>
+</div>
