@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration
       t.text :password
       t.text :email
       t.integer :session_id
-      t.integer :inventory_id
       t.integer :room_id
 
       t.timestamps

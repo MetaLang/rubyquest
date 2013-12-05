@@ -5,11 +5,14 @@ class CreateItems < ActiveRecord::Migration
       t.text :short_desc
       t.text :long_desc
       t.integer :connection_id
-      t.integer :inventory_id
-      t.integer :room_id
+      t.belongs_to :inventory
+      t.belongs_to :room
       t.boolean :takeable
+      t.boolean :taken
       t.boolean :useable
+      t.boolean :used
       t.boolean :openable
+      t.boolean :opened
 
       t.timestamps
     end

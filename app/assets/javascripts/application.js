@@ -18,25 +18,53 @@ $('document').ready(function()
 {
     $('#command-button').on('click', function(ev)
     {
+        $command_field = $('#command-field');
         var validCmds = ["take", "examine", "drop", "look"];
-        var cmdText = $('#command-field').val();
-        var words = cmdText.split(" ");
-        if ((words.length == 1 || words.length == 2) && (validCmds.indexOf(words[0]) > -1))
+        var cmdText = $command_field.val();
+        var cmd = "";
+        $command_field.val("");
+        validCmds.forEach(function(validCmd)
         {
-            if (words[0] == "look")
+            if (cmdText.search(validCmd) > -1)
+            {
+                cmd = validCmd;
+            }
+        });
+        if (cmd !== "")
+        {
+            if (cmd == "look")
             {
                 location.reload();
             }
             else
             {
-                var arg = words[1];
-                $.get("/items/" + words[0] + "/" + words[1])
-                    .done(function(data)
-                    {
-                        console.log(data);
-                        $('#content-container').append(data);
-                    });
+                var arg = cmdText.slice(cmd.length + 1, cmdText.length);
+                if (arg !== "")
+                {
+                    $.get("/items/" + cmd + "/" + arg)
+                        .done(function(data)
+                        {
+                            console.log(data);
+                            $('#content-container').append(data);
+                        });
+                }
+                else
+                {
+                    $('#content-container').append("<div class='error-message'>" +
+                                                        "<p>" +
+                                                            "It doesn't look like there's anything like that around here." +
+                                                        "</p>" +
+                                                    "</div>");
+                }
             }
+        }
+        else
+        {
+                    $('#content-container').append("<div class='error-message'>" +
+                                                        "<p>" +
+                                                            "That is not a valid action." +
+                                                        "</p>" +
+                                                    "</div>");
         }
     });
 });

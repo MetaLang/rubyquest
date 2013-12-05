@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20131201023425) do
   end
 
   create_table "inventories", :force => true do |t|
-    t.integer  "item_id"
     t.integer  "user_id"
     t.integer  "max_cap"
     t.integer  "current_cap"
@@ -38,8 +37,11 @@ ActiveRecord::Schema.define(:version => 20131201023425) do
     t.integer  "inventory_id"
     t.integer  "room_id"
     t.boolean  "takeable"
+    t.boolean  "taken"
     t.boolean  "useable"
+    t.boolean  "used"
     t.boolean  "openable"
+    t.boolean  "opened"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -56,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20131201023425) do
     t.text     "password"
     t.text     "email"
     t.integer  "session_id"
-    t.integer  "inventory_id"
     t.integer  "room_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false

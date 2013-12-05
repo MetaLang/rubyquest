@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 	def create
-		@user = User.create(params[:user])
-		
+		@user = User.new(params[:user])
+
 		if @user.save
+			view_context.create_inventory_and_items(@user)
 			redirect_to root_url, alert: "User created!"
 		end
 		
